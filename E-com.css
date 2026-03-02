@@ -13,17 +13,18 @@ body{
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(12, 4, 1);
-    color: rgb(85, 175, 223);
+    background-color: #000000;
+    color: rgb(233, 236, 237);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
-.logo{
-    margin-left: 13px;
-    font-size: 19px;
+.logo img{
+    height: 100px;   /* adjust 35–50px if needed */
+    width: auto;
+    display: block;
 }
 
 nav ul{
@@ -60,36 +61,58 @@ ul li a.active{
 
 .main{
     display: flex;
-    justify-content: center;
-    margin-top: 155px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 8%;
+    gap: 60px;
+    background-color: #f5f2f2;   /* SAME BLACK BACKGROUND */
 }
 
-.mainText h1{
-    font-size: 55px;
-    color: rgb(3, 168, 168);
+/* Text styling */
+
+.mainText{
+    flex: 1;
+    text-align: left;
 }
 
 .mainText h2{
-    font-size: 33px;
+    color:  #0a9d9d;
+}
+
+.mainText h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.mainText p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #0b0a0a;
 }
 
 .mainText button{
-    width: 120px;
-    height: 34px;
-    background-color: rgb(3, 123, 123);
+    padding: 12px 28px;
+    background-color: #0a9d9d;
     color: white;
-    font-size: 18px;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .mainText button:hover{
-    border: 2px solid rgb(3, 163, 163);
-    background-color: transparent;
-    color: black;
-    cursor: pointer;
+    background-color: #077777;
 }
 
-/* ================= CARDS ================= */
+/* Image styling */
+
+.main img{
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 30px;
+}
 
 .cards{
     display: flex;
@@ -332,7 +355,38 @@ ul li a.active{
 
 @media only screen and (max-width:768px){
 
+    nav ul{
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: fixed;     /* important */
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        gap: 20px;
+        z-index: 1500;
+    }
+
+    nav ul li a{
+        color: black;
+    }
+
+    .showData{
+        display: flex !important;
+    }
+
+    .icon{
+        display: block;
+        cursor: pointer;
+    }
+
+    nav{
+        z-index: 2000;
+    }
+
     .main{
+        margin-top: 120px;  /* hero hide na ho */
         flex-direction: column;
         text-align: center;
     }
@@ -375,23 +429,4 @@ ul li a.active{
         text-align: center;
         gap: 20px;
     }
-}
-
-
-/* Extra small phones */
-
-@media only screen and (max-width:480px){
-
-    .mainText h1{
-        font-size: 28px;
-    }
-
-    .mainText h2{
-        font-size: 18px;
-    }
-
-    .buyPage{
-        padding: 15px;
-    }
-
 }
